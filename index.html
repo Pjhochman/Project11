@@ -22,10 +22,10 @@
     <!-- fog="type: exponential; color: #1e1e22; density: 0.3" -->
 
     
-    <!-- <a-entity   geometry="primitive: box" material="color: blue" scale="30 20 80" position="-9.141  0.000 14.063" scale="5 5 5" sound="src: url(sound/beginning.mp3); distanceModel: linear; maxDistance: 65; volume: 0.1; autoplay: true; loop: true;"></a-entity> -->
+    <a-entity   geometry="primitive: box" material="color: blue" scale="30 20 80" position="-9.141  0.000 14.063" scale="5 5 5" sound="src: url(sound/beginning.mp3); distanceModel: linear; maxDistance: 65; volume: 0.1; autoplay: true; loop: true;"></a-entity>
 
     
-    <!-- <a-entity  visible="false"; geometry="primitive: box" material="color: blue" scale="15 15 15" position="-9.020 0.489 66.850" scale="5 5 5" sound="src: url(sound/billEvans.mp3); distanceModel: linear; maxDistance: 10; volume: 0.08; autoplay: true; loop: true;"></a-entity> -->
+    <a-entity  visible="false"; geometry="primitive: box" material="color: blue" scale="15 15 15" position="-9.020 0.489 66.850" scale="5 5 5" sound="src: url(sound/billEvans.mp3); distanceModel: linear; maxDistance: 10; volume: 0.08; autoplay: true; loop: true;"></a-entity>
 
 
 
@@ -44,15 +44,10 @@
 
 <a-entity text4 text="shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/amaticsc/AmaticSC-Bold.json;" position="-10.345 1.35 40.3" rotation="0 180 0" scale="2 2 2"></a-entity>
 
-  <a-entity text5 id="text5" position="-8.456 0.698 35.574" rotation="0 320 0" 
+  <a-entity text8 id="text5" position="-8.456 0.698 35.574" rotation="0 320 0" 
   scale="1.2 1.2 1.2" 
   text= "shader: msdf; font: https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/amaticsc/AmaticSC-Bold.json; align: center; anchor: center; width: 1.5; color: white; xOffset: 0.150;
-  zOffset: -0.5; 
-  value: She always did.\t
-  Asking herself why she became this way\n
-  Life throws a dice, and that's who you become\t
-  'why isn't she more like me?' -said everyone. 
-  "> 
+  zOffset: -0.5;"> 
 </a-entity>
 
 <a-entity text6 text="side: double; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/amaticsc/AmaticSC-Bold.json;" position="-8.999 -0.449 47.763" rotation="-90 180 0" scale="1.7 1.7 1.7"></a-entity>
@@ -407,6 +402,19 @@ AFRAME.registerComponent('benchlight', {
         },
       });
 
+      AFRAME.registerComponent('text5', { 
+      tick: function () { 
+        if (cameraposition < -38) {
+          this.el.setAttribute("text", {
+              anchor: "center",
+              width: 1.5,
+              color: "white",
+              value: "Back",
+            });
+          }
+        },
+      });
+
 
       AFRAME.registerComponent('text6', { 
       tick: function () { 
@@ -435,7 +443,22 @@ AFRAME.registerComponent('benchlight', {
           }
         },
       });
+
+      AFRAME.registerComponent('text8', { 
+      tick: function () { 
+        if (cameraposition < -38) {
+          this.el.setAttribute("text", {
+              anchor: "center",
+              align: "center",
+              width: 1.5,
+              color: "white",
+              value: "She always did.\nAsking herself why she became this way\nLife throws a dice, and that's who you become\t'why isn't she more like me?' -said everyone.",
+            });
+          }
+        },
+      });
      
+    
       //Light flicker hallway
       AFRAME.registerComponent('firstlight', { 
       tick: function () { 
@@ -703,7 +726,7 @@ AFRAME.registerComponent('benchlight', {
     AFRAME.registerComponent('listener', {
       tick: function () {
         cameraposition = this.el.object3D.position.z
-        console.log(cameraposition)
+        // console.log(cameraposition)
       }
      }
     );
@@ -735,14 +758,14 @@ AFRAME.registerComponent('benchlight', {
     } 
   });
 
-  AFRAME.registerComponent('text5', { 
-      tick: function () { 
-        let text5 = this.el; 
-        if (cameraposition < -46) {
-        text5.parentNode.removeChild(text5); 
-      } 
-    } 
-  });
+  // AFRAME.registerComponent('text5', { 
+  //     tick: function () { 
+  //       let text5 = this.el; 
+  //       if (cameraposition < -46) {
+  //       text5.parentNode.removeChild(text5); 
+  //     } 
+  //   } 
+  // });
     
     
       </script>
