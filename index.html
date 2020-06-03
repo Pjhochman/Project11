@@ -10,7 +10,7 @@
     <a-scene vr-mode-ui="enabled: false" >
 
         <a-entity position="-0 0 0" rotation="0 180 0">
-            <a-camera listener  ></a-camera>
+            <a-camera listener ></a-camera>
         </a-entity>
 
 
@@ -317,7 +317,7 @@ AFRAME.registerComponent('benchlight', {
               type: "point",
               intensity: 0.4,
               angle: 200,
-              distance: 10,
+              distance: 8,
               decay: 1,
             });
           }
@@ -331,7 +331,7 @@ AFRAME.registerComponent('benchlight', {
           this.el.setAttribute("light", {
               type: "point",
               intensity: 0.4,
-              distance: 15,
+              distance: 6.0,
               decay: 0.01,
             });
           }
