@@ -18,23 +18,21 @@
 
           <!-- look-controls wasd-controls="acceleration: 100" -->
        
-    
-    <!-- fog="type: exponential; color: #1e1e22; density: 0.3" -->
 
     
     <a-entity geometry="primitive: box" material="color: blue" scale="30 20 80" position="-9.141  0.000 14.063" scale="5 5 5" sound="src: url(sound/beginning.mp3); distanceModel: linear; maxDistance: 55; volume: 0.1; autoplay: true; loop: true;"></a-entity>
 
     
-    <a-entity visible="false"; geometry="primitive: box" material="color: blue" scale="15 15 15" position="-9.020 0.489 66.850" scale="5 5 5" sound="src: url(sound/billEvans.mp3); distanceModel: linear; maxDistance: 10; volume: 0.08; autoplay: true; loop: true;"></a-entity>
+    <a-entity visible="false"; geometry="primitive: box" material="color: blue" scale="15 15 15" position="-9.020 0.489 66.850" scale="5 5 5" sound="src: url(sound/billEvans.mp3); distanceModel: linear; maxDistance: 11; volume: 0.08; autoplay: true; loop: true;"></a-entity>
 
 
     <a-entity id="text1" position="0.092 1.499 0.761" rotation="0 180 0" 
     scale="0.6 0.6 0.6" 
     text="align: center; anchor: center; width: 1.5; color: white; xOffset: 0.150;
-    zOffset: -0.5; value: Shivering cold. 
-    Scars deep and bold.
-    This young girl has been through a lot. 
-    Let the truth be told...; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/amaticsc/AmaticSC-Bold.json;">
+    zOffset: -0.5; value: Shivering cold, 
+    Scars deep and bold,
+    This young girl has been through a lot 
+    Let the truth be told..; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/amaticsc/AmaticSC-Bold.json;">
   </a-entity>
 
 <a-entity text2 text="shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/amaticsc/AmaticSC-Bold.json;"  position="-10.345  1.35 30" rotation="0 180 0" scale="2 2 2"></a-entity>
@@ -43,7 +41,7 @@
 
 <a-entity text4 text="shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/amaticsc/AmaticSC-Bold.json;" position="-10.345 1.35 40.3" rotation="0 180 0" scale="2 2 2"></a-entity>
 
-  <a-entity text8 id="text5" position="-8.456 0.698 35.574" rotation="0 320 0" 
+  <a-entity text8 id="text5" position="-8.456 0.795 35.574" rotation="0 320 0" 
   scale="1.2 1.2 1.2" 
   text= "shader: msdf; font: https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/amaticsc/AmaticSC-Bold.json; align: center; anchor: center; width: 1.5; color: white; xOffset: 0.150;
   zOffset: -0.5;"> 
@@ -144,7 +142,7 @@
 AFRAME.registerComponent('girl4', { 
       tick: function () { 
         if (cameraposition < -36) {
-          this.el.setAttribute("position", {x: -9.0, y: 0.299, z: 35});
+          this.el.setAttribute("position", {x: -9.0, y: 0.299, z: 34.283});
           this.el.setAttribute("scale", {x: 0.4, y: 0.4, z: 0.4})
           } if (cameraposition < -44) {
           this.el.setAttribute("position", {x: 0, y: 0, z: 0});
@@ -172,7 +170,7 @@ AFRAME.registerComponent('benchlight', {
           this.el.setAttribute("light", {
               type: "point",
               intensity: 0.5,
-              distance: 15,
+              distance: 14,
               decay: 0.01,
             });
           }  if (cameraposition < -58) {
@@ -465,7 +463,7 @@ AFRAME.registerComponent('benchlight', {
               align: "center",
               width: 1.5,
               color: "white",
-              value: "She always did.\nAsking herself why she became this way\nLife throws a dice, and that's who you become\t'why isn't she more like me?' -said everyone.",
+              value: "But she always did.\n\nJudged by others\nshe asked herself how she became this way\nbut if you'd see her mind\n you'd probably stay.",
             });
           } if (cameraposition < -42) {
             this.el.setAttribute("text", {
